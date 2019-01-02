@@ -13,7 +13,9 @@ class SelectImageViewController: UIViewController, UIImagePickerControllerDelega
     
     @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
-
+    @IBOutlet weak var textOnTop: UITextField!
+    @IBOutlet weak var textOnBottom: UITextField!
+    
 
     
     override func viewDidLoad() {
@@ -64,7 +66,7 @@ class SelectImageViewController: UIViewController, UIImagePickerControllerDelega
         self.dismiss(animated: true, completion: nil)
     }
 
-    
+    @objc func keyboardWillShow(
     
     
 }
