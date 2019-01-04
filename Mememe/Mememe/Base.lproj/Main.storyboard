@@ -40,18 +40,18 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="603"/>
                                 <color key="tintColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" text="textOnTop" borderStyle="line" placeholder="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5de-KN-HRa">
-                                <rect key="frame" x="30" y="179" width="314" height="60"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="top" text="text" borderStyle="line" placeholder="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5de-KN-HRa">
+                                <rect key="frame" x="30.5" y="20" width="314" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="314" id="7EC-ra-EDk"/>
                                     <constraint firstAttribute="height" constant="60" id="DES-1l-ZJ9"/>
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" text="textOnBottom" borderStyle="line" placeholder="BOTTOM" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="DML-MA-pKj">
-                                <rect key="frame" x="30" y="398" width="314" height="60"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="top" text="text" borderStyle="line" placeholder="BOTTOM" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="DML-MA-pKj">
+                                <rect key="frame" x="30.5" y="563" width="314" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="314" id="y6A-Uo-T3M"/>
                                     <constraint firstAttribute="height" constant="60" id="zKW-mI-KoX"/>
