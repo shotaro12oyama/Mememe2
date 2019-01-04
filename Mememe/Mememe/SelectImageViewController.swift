@@ -15,11 +15,12 @@ class SelectImageViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var textOnTop: UITextField!
     @IBOutlet weak var textOnBottom: UITextField!
-    var textOnTopEditing: UInt = 0
-
+    @IBOutlet weak var actionButton: UIBarButtonItem!
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
+    
     let memeTextAttributes: [NSAttributedString.Key: Any] = [
-        NSAttributedString.Key.strokeColor: UIColor.white/* TODO: fill in appropriate UIColor */,
-        NSAttributedString.Key.foregroundColor: UIColor.blue/* TODO: fill in appropriate UIColor */,
+        NSAttributedString.Key.strokeColor: UIColor.black/* TODO: fill in appropriate UIColor */,
+        NSAttributedString.Key.foregroundColor: UIColor.white/* TODO: fill in appropriate UIColor */,
         NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
         NSAttributedString.Key.strokeWidth: -3.0 /* TODO: fill in appropriate Float */
     ]
@@ -158,6 +159,17 @@ class SelectImageViewController: UIViewController, UIImagePickerControllerDelega
         
         return true;
     }
+    
+    
+    @IBAction func cancelMemeEdit(_ sender: Any) {
+    }
+    
+    @IBAction func actionMemeEdit(_ sender: Any) {
+        // Create the meme
+        let memedImage = generateMemedImage()
+        let meme = Meme(topText: textOnTop.text!, bottomText: textOnBottom.text!, originalImage: imagePickerView.image!, memedImage: memedImage)
+    }
+    
     
 }
 
