@@ -10,15 +10,15 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Select Image View Controller-->
+        <!--Meme Editor View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" userLabel="Select Image View Controller" customClass="SelectImageViewController" customModule="Mememe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MemeEditorViewController" customModule="Mememe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M6v-Yb-chJ">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M6v-Yb-chJ" userLabel="Bottom Toolbar">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="ITz-sS-mX1"/>
@@ -63,7 +63,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6TO-Du-Psx">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6TO-Du-Psx" userLabel="Top Toolbar">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
                                     <barButtonItem systemItem="action" id="W1C-of-1Rl">
@@ -105,11 +105,13 @@
                     <connections>
                         <outlet property="ActionButton" destination="W1C-of-1Rl" id="TPb-v5-4VP"/>
                         <outlet property="actionButton" destination="W1C-of-1Rl" id="vWG-vy-LXu"/>
+                        <outlet property="bottomToolbar" destination="M6v-Yb-chJ" id="7hY-l1-6B0"/>
                         <outlet property="cameraButton" destination="zwi-lX-6fq" id="GLi-v3-b3O"/>
                         <outlet property="cancelButton" destination="Weq-Ol-eMf" id="f9W-CM-5Rq"/>
                         <outlet property="imagePickerView" destination="tCw-qh-fli" id="VtA-c2-K1s"/>
                         <outlet property="textOnBottom" destination="DML-MA-pKj" id="UmO-1Y-sNW"/>
                         <outlet property="textOnTop" destination="5de-KN-HRa" id="EOr-Rv-k3h"/>
+                        <outlet property="topToolbar" destination="6TO-Du-Psx" id="ntD-2A-DNf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

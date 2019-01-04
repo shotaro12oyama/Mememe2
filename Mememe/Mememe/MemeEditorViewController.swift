@@ -1,14 +1,14 @@
 //
-//  SelectImageViewController.swift
+//  MemeEditorViewController.swift
 //  Mememe
 //
-//  Created by 尾山昌太郎 on 2018/12/28.
+//  Created by Shotaro Oyama on 2018/12/28.
 //  Copyright © 2018 shotaro. All rights reserved.
 //
 
 import UIKit
 
-class SelectImageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     
     @IBOutlet weak var imagePickerView: UIImageView!
@@ -17,6 +17,10 @@ class SelectImageViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var textOnBottom: UITextField!
     @IBOutlet weak var actionButton: UIBarButtonItem!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
+    
+    @IBOutlet weak var bottomToolbar: UIToolbar!
+    @IBOutlet weak var topToolbar: UIToolbar!
+    
     
     let memeTextAttributes: [NSAttributedString.Key: Any] = [
         NSAttributedString.Key.strokeColor: UIColor.black/* TODO: fill in appropriate UIColor */,
@@ -33,6 +37,7 @@ class SelectImageViewController: UIViewController, UIImagePickerControllerDelega
     }
 
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -44,6 +49,9 @@ class SelectImageViewController: UIViewController, UIImagePickerControllerDelega
         textOnBottom.textAlignment = NSTextAlignment.center
         self.textOnTop.delegate = self
         self.textOnBottom.delegate = self
+        actionButton.isEnabled = false
+        textOnTop.isHidden = true
+        textOnBottom.isHidden = true
 
     }
     
@@ -66,8 +74,9 @@ class SelectImageViewController: UIViewController, UIImagePickerControllerDelega
         imagePicker.delegate = self
         imagePicker.sourceType = .camera
         present(imagePicker, animated: true, completion: nil)
-        
-        
+        textOnTop.isHidden = false
+        textOnBottom.isHidden = false
+        actionButton.isEnabled = true
     }
     
     @IBAction func pickAnImageFromAlbum(_ sender: Any) {
@@ -77,17 +86,17 @@ class SelectImageViewController: UIViewController, UIImagePickerControllerDelega
         imagePicker.sourceType = .photoLibrary
         imagePicker.allowsEditing = true
         present(imagePicker, animated: true, completion: nil)
-       
+        textOnTop.isHidden = false
+        textOnBottom.isHidden = false
+        actionButton.isEnabled = true
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         if let image = info[.editedImage] as? UIImage {
-            
             // Set the image selected
             imagePickerView.contentMode = .scaleAspectFit
             imagePickerView.image = image
-           
         }
         
         // モーダルビューを閉じる
@@ -128,24 +137,28 @@ class SelectImageViewController: UIViewController, UIImagePickerControllerDelega
         }
     }
     
-    func save() {
-        // Create the meme
-        let memedImage = generateMemedImage()
-        let meme = Meme(topText: textOnTop.text!, bottomText: textOnBottom.text!, originalImage: imagePickerView.image!, memedImage: memedImage)
-    }
-    
+
     
     func generateMemedImage() -> UIImage {
         
         // TODO: Hide toolbar and navbar
+        topToolbar.isHidden = true
+        bottomToolbar.isHidden = true
+        
         
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
+        imagePickerView.image = memedImage
+        
+        actionButton.isEnabled = true
+        
         
         // TODO: Show toolbar and navbar
+        topToolbar.isHidden = false
+        bottomToolbar.isHidden = false
         
         return memedImage
     }
@@ -162,12 +175,24 @@ class SelectImageViewController: UIViewController, UIImagePickerControllerDelega
     
     
     @IBAction func cancelMemeEdit(_ sender: Any) {
+        
     }
     
     @IBAction func actionMemeEdit(_ sender: Any) {
         // Create the meme
         let memedImage = generateMemedImage()
-        let meme = Meme(topText: textOnTop.text!, bottomText: textOnBottom.text!, originalImage: imagePickerView.image!, memedImage: memedImage)
+        let activityItems: Array<Any> = [memedImage]
+        let activityViewController: UIActivityViewController = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+
+        activityViewController.completionWithItemsHandler = {(UIActivityType: UIActivity.ActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) in
+                if completed {
+                        let meme = Meme(topText: self.textOnTop.text!, bottomText: self.textOnBottom.text!, originalImage: self.imagePickerView.image!, memedImage: memedImage)
+                    }
+            
+                }
+        self.present(activityViewController, animated: true, completion: nil)
+        
+        
     }
     
     

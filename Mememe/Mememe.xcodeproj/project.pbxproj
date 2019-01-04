@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		8D35C88321D6F3F70030275F /* EditImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D35C88221D6F3F70030275F /* EditImageViewController.swift */; };
 		8D8E635421D5970C00F0E589 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8E635321D5970C00F0E589 /* AppDelegate.swift */; };
-		8D8E635621D5970C00F0E589 /* SelectImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8E635521D5970C00F0E589 /* SelectImageViewController.swift */; };
+		8D8E635621D5970C00F0E589 /* MemeEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8E635521D5970C00F0E589 /* MemeEditorViewController.swift */; };
 		8D8E635921D5970C00F0E589 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D8E635721D5970C00F0E589 /* Main.storyboard */; };
 		8D8E635B21D5970E00F0E589 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D8E635A21D5970E00F0E589 /* Assets.xcassets */; };
 		8D8E635E21D5970E00F0E589 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D8E635C21D5970E00F0E589 /* LaunchScreen.storyboard */; };
@@ -38,7 +38,7 @@
 		8D35C88221D6F3F70030275F /* EditImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditImageViewController.swift; sourceTree = "<group>"; };
 		8D8E635021D5970C00F0E589 /* Mememe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mememe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D8E635321D5970C00F0E589 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8D8E635521D5970C00F0E589 /* SelectImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectImageViewController.swift; sourceTree = "<group>"; };
+		8D8E635521D5970C00F0E589 /* MemeEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeEditorViewController.swift; sourceTree = "<group>"; };
 		8D8E635821D5970C00F0E589 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8D8E635A21D5970E00F0E589 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D8E635D21D5970E00F0E589 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				8D8E635321D5970C00F0E589 /* AppDelegate.swift */,
-				8D8E635521D5970C00F0E589 /* SelectImageViewController.swift */,
+				8D8E635521D5970C00F0E589 /* MemeEditorViewController.swift */,
 				8D8E635721D5970C00F0E589 /* Main.storyboard */,
 				8D8E635A21D5970E00F0E589 /* Assets.xcassets */,
 				8D8E635C21D5970E00F0E589 /* LaunchScreen.storyboard */,
@@ -207,7 +207,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8D8E634B21D5970C00F0E589 /* Build configuration list for PBXProject "Mememe" */;
+			buildConfigurationList = 8D8E634B21D5970C00F0E589 /* Build configuration list for PBXProject "MemeMe" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -259,7 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D8E635621D5970C00F0E589 /* SelectImageViewController.swift in Sources */,
+				8D8E635621D5970C00F0E589 /* MemeEditorViewController.swift in Sources */,
 				8D8E635421D5970C00F0E589 /* AppDelegate.swift in Sources */,
 				8D35C88321D6F3F70030275F /* EditImageViewController.swift in Sources */,
 			);
@@ -553,7 +553,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8D8E634B21D5970C00F0E589 /* Build configuration list for PBXProject "Mememe" */ = {
+		8D8E634B21D5970C00F0E589 /* Build configuration list for PBXProject "MemeMe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8D8E637621D5970E00F0E589 /* Debug */,
