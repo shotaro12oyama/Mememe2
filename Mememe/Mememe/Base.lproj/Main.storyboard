@@ -39,26 +39,14 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="EgP-ND-c2m"/>
                                 </items>
                             </toolbar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tCw-qh-fli">
-                                <rect key="frame" x="0.0" y="20" width="375" height="603"/>
-                                <color key="tintColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
-                            </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="fill" text="text" placeholder="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5de-KN-HRa">
-                                <rect key="frame" x="30.5" y="76" width="314" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="314" id="7EC-ra-EDk"/>
-                                    <constraint firstAttribute="height" constant="60" id="DES-1l-ZJ9"/>
-                                </constraints>
+                                <rect key="frame" x="16" y="76" width="343" height="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="fill" text="text" placeholder="BOTTOM" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="DML-MA-pKj">
-                                <rect key="frame" x="30.5" y="563" width="314" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="314" id="y6A-Uo-T3M"/>
-                                    <constraint firstAttribute="height" constant="60" id="zKW-mI-KoX"/>
-                                </constraints>
+                                <rect key="frame" x="16" y="597" width="343" height="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
@@ -79,6 +67,10 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tCw-qh-fli">
+                                <rect key="frame" x="0.0" y="20" width="375" height="603"/>
+                                <color key="tintColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -86,8 +78,10 @@
                             <constraint firstItem="M6v-Yb-chJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Cgd-Ne-8wn"/>
                             <constraint firstItem="M6v-Yb-chJ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Eg1-Yh-at1"/>
                             <constraint firstItem="M6v-Yb-chJ" firstAttribute="top" secondItem="tCw-qh-fli" secondAttribute="bottom" id="GjH-KO-3R8"/>
+                            <constraint firstItem="DML-MA-pKj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="IXa-AE-f5n"/>
                             <constraint firstItem="tCw-qh-fli" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="IgR-m2-2fS"/>
                             <constraint firstItem="DML-MA-pKj" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="KXg-Gh-Whp"/>
+                            <constraint firstItem="5de-KN-HRa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="KbQ-hG-NtP"/>
                             <constraint firstItem="6TO-Du-Psx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="MuR-hj-nH9"/>
                             <constraint firstItem="tCw-qh-fli" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="TY9-RX-40P"/>
                             <constraint firstItem="5de-KN-HRa" firstAttribute="top" secondItem="6TO-Du-Psx" secondAttribute="bottom" constant="12" id="Tfu-59-tu3"/>
