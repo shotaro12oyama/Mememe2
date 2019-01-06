@@ -48,7 +48,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        // label
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Start Over", style: .plain, target: self, action: #selector(startOver))
         
         setStyle(textField: textOnTop)
         setStyle(textField: textOnBottom)
@@ -58,6 +58,16 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
 
+    }
+    
+    @objc func startOver() {
+        if let navigationController = navigationController {
+            navigationController.popToRootViewController(animated: true)
+        }
+    }
+    
+    deinit {
+        print("MemeEditorViewController Deallocated")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -185,6 +195,9 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         activityViewController.completionWithItemsHandler = {(UIActivityType: UIActivity.ActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) in
                 if completed {
                         let meme = MemeModel(topText: self.textOnTop.text!, bottomText: self.textOnBottom.text!, originalImage: self.imagePickerView.image!, memedImage: memedImage)
+                    
+                        (UIApplication.shared.delegate as! AppDelegate).memes.append(meme)
+
                     }
             
                 }
