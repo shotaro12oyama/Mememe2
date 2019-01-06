@@ -97,7 +97,13 @@
                             <outlet property="delegate" destination="YF8-yR-K14" id="n2u-bk-ucx"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="sA5-md-JjH"/>
+                    <navigationItem key="navigationItem" id="sA5-md-JjH">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Zkk-Xa-UEi">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="gWu-Kb-A42"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AoI-nS-S6E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -112,7 +118,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M6v-Yb-chJ" userLabel="Bottom Toolbar">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="574" width="375" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="ITz-sS-mX1"/>
                                 </constraints>
@@ -133,19 +139,19 @@
                                 </items>
                             </toolbar>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="fill" text="text" placeholder="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5de-KN-HRa">
-                                <rect key="frame" x="16" y="76" width="343" height="26"/>
+                                <rect key="frame" x="16" y="120" width="343" height="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="fill" text="text" placeholder="BOTTOM" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="DML-MA-pKj">
-                                <rect key="frame" x="16" y="597" width="343" height="26"/>
+                                <rect key="frame" x="16" y="548" width="343" height="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6TO-Du-Psx" userLabel="Top Toolbar">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                                 <items>
                                     <barButtonItem systemItem="action" id="W1C-of-1Rl">
                                         <connections>
@@ -161,7 +167,7 @@
                                 </items>
                             </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tCw-qh-fli">
-                                <rect key="frame" x="0.0" y="20" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="510"/>
                                 <color key="tintColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                             </imageView>
                         </subviews>
@@ -204,7 +210,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1186" y="47"/>
+            <point key="canvasLocation" x="1409" y="-322"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="qGu-Jt-Lvl">
@@ -229,7 +235,13 @@
                             <outlet property="delegate" destination="3BI-B3-Dre" id="RJt-hM-37S"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Gld-zR-GP0"/>
+                    <navigationItem key="navigationItem" id="Gld-zR-GP0">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="J3E-Ud-nQN">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="DFU-K9-DgU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4pP-gP-Fkc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -240,4 +252,7 @@
         <image name="collection_30x30" width="30" height="30"/>
         <image name="table_30x30" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="gWu-Kb-A42"/>
+    </inferredMetricsTieBreakers>
 </document>
