@@ -38,7 +38,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="3BI-B3-Dre" kind="relationship" relationship="rootViewController" id="aLI-55-9fS"/>
+                        <segue destination="3BI-B3-Dre" kind="relationship" relationship="rootViewController" id="KIg-dB-LgT"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HBz-km-DKb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -212,27 +212,44 @@
             </objects>
             <point key="canvasLocation" x="1409" y="-322"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Sent Memes Table View Controller-->
         <scene sceneID="qGu-Jt-Lvl">
             <objects>
-                <tableViewController id="3BI-B3-Dre" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4pP-gP-Fkc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="3BI-B3-Dre" customClass="SentMemesTableViewController" customModule="Mememe" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="C8n-BO-N70">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ICj-eU-7Xi">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemesCell" textLabel="0bQ-6K-w1B" detailTextLabel="LSn-7B-il4" style="IBUITableViewCellStyleSubtitle" id="ICj-eU-7Xi" customClass="SentMemesTableViewCell" customModule="Mememe" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ICj-eU-7Xi" id="7xD-AR-n6C">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ICj-eU-7Xi" id="7xD-AR-n6C">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0bQ-6K-w1B">
+                                            <rect key="frame" x="16" y="5" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LSn-7B-il4">
+                                            <rect key="frame" x="16" y="25.5" width="33" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="3BI-B3-Dre" id="lXr-rC-vEU"/>
-                            <outlet property="delegate" destination="3BI-B3-Dre" id="RJt-hM-37S"/>
+                            <outlet property="dataSource" destination="3BI-B3-Dre" id="rYs-yz-EHT"/>
+                            <outlet property="delegate" destination="3BI-B3-Dre" id="vHh-WU-czz"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Gld-zR-GP0">
@@ -242,10 +259,49 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="memesTableView" destination="C8n-BO-N70" id="1ue-fB-E4L"/>
+                    </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4pP-gP-Fkc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="233" y="47"/>
+            <point key="canvasLocation" x="232.80000000000001" y="46.326836581709152"/>
+        </scene>
+        <!--Memes Detail View Controller-->
+        <scene sceneID="ksB-Y9-PfT">
+            <objects>
+                <viewController storyboardIdentifier="MemesDetailViewController" id="Wqu-z2-ZWB" customClass="MemesDetailViewController" customModule="Mememe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zag-WB-n59">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hzl-zy-rrt" userLabel="imageView">
+                                <rect key="frame" x="0.0" y="269" width="375" height="128"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vFg-0q-Eyg">
+                                <rect key="frame" x="166" y="431" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hzl-zy-rrt" firstAttribute="centerY" secondItem="Be0-JI-aly" secondAttribute="centerY" id="Sw3-br-Ar0"/>
+                            <constraint firstItem="Be0-JI-aly" firstAttribute="trailing" secondItem="hzl-zy-rrt" secondAttribute="trailing" id="bVQ-o2-S0D"/>
+                            <constraint firstItem="hzl-zy-rrt" firstAttribute="leading" secondItem="Be0-JI-aly" secondAttribute="leading" id="feL-p0-BB4"/>
+                            <constraint firstItem="hzl-zy-rrt" firstAttribute="centerX" secondItem="Be0-JI-aly" secondAttribute="centerX" id="ged-Io-TEW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Be0-JI-aly"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="hzl-zy-rrt" id="i5i-Oe-RFw"/>
+                        <outlet property="textLabel" destination="vFg-0q-Eyg" id="Ks2-su-nqY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jtV-eG-fwz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="233" y="806"/>
         </scene>
     </scenes>
     <resources>
@@ -253,6 +309,6 @@
         <image name="table_30x30" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gWu-Kb-A42"/>
+        <segue reference="DFU-K9-DgU"/>
     </inferredMetricsTieBreakers>
 </document>
