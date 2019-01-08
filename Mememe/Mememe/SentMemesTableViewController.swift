@@ -33,14 +33,6 @@ class SentMemesTableViewController: UIViewController, UITableViewDataSource, UIT
         super.viewWillAppear(animated)
         memesTableView.reloadData()
     }
-
-    // MARK: - Table view data source
-    let favoriteThings = [
-        "Raindrops on roses",
-        "Whiskers on kittens",
-        "Bright copper kettles",
-        "Warm woolen mittens"
-    ]
     
     // MARK: Table View Data Source Methods
     
